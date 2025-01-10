@@ -1,0 +1,149 @@
+import { Callout } from "nextra/components";
+import React from "react";
+import Image from "next/image";
+
+# **Gestión de fichas de inspección**
+
+Este módulo le ofrece la posibilidad de visualizar los productos tecnológicos Portátiles extraidos de las tiendas en líneas. Además, el sistema permite realizar filtros y ordenamientos con el fín de disminuir la cantidad y variedad de opciones.
+
+#### 1. Acceder al modulo inspección
+
+Se selecciona la opción del menu (icono) y se despliega un menu lateral. Por consiguiente se selecciona "Inspección"
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/menu_drawer_inspeccion.png"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+
+#### 2. Búsqueda de inspecciones por código o cédula.
+
+Una vez ingresado al modulo Inspecciones, este tiene la funcionalidad de realizar la busqueda de inspecciones. Por medio de Código de Inspección o Cedula/RUC registrado en la inspeccion.
+
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap", // Permite ajustar los elementos si no caben en una fila
+    justifyContent: "center", // Centra las imágenes en el contenedor
+    gap: "16px", // Espaciado entre las imágenes
+    padding: "16px", // Espaciado interno para un diseño más limpio
+  }}
+>
+  {[
+    {
+      src: "/assets/images/buscar_inspeccion_3.jpg",
+      alt: "Pantalla de búsqueda de inspecciones",
+    },
+    {
+      src: "/assets/images/codigo_cedula.jpg",
+      alt: "Pantalla de ingreso de código o cédula",
+    },
+    {
+      src: "/assets/images/buscar_inspeccion_1.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+    {
+      src: "/assets/images/buscar_inspeccion_2.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+  ].map((image, index) => (
+    <div
+      key={index}
+      style={{
+        position: "relative",
+        flex: "1 1 calc(25% - 16px)", // Toma el 25% del ancho con un espaciado
+        height: "500px", // Altura fija para todas las imágenes
+        minWidth: "300px", // Asegura un ancho mínimo para imágenes pequeñas
+        maxWidth: "400px", // Limita el ancho máximo para evitar tamaños exagerados
+      }}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        style={{ objectFit: "contain" }}
+        priority
+      />
+    </div>
+  ))}
+</div>
+
+1. Una vez seleccionado el tipo de busqueda
+2. Se ingresa el valor en el Campo.
+3. Por consiguiente se selecciona en el "Icono Lupa" o "Boton Buscar".
+4. Se visualizará la lista de inspecciones encontradas por ese campo.
+
+#### 3. Registro de inspecciones.
+
+Dentro de la vista Inspecciones el sisema permite registrar nuevas inspecciones. Por lo tanto primero se debe ubicar en la vista y seleccionar el boton "Registrar nueva inspección"
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/registrar_inspeccion1.jpg"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+
+Por consiguimiente se redireccionará al formulario de "Prevención", el cual se visualizar los campos donde se tiene que llenar.
+
+##### A. Formulario Prevención
+
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap", // Permite que sea responsivo
+    justifyContent: "space-between", // Espacia las columnas
+    alignItems: "flex-start", // Alinea el contenido al inicio
+    gap: "16px", // Espaciado entre las columnas
+  }}
+>
+  {/* Columna de texto */}
+  <div style={{ flex: "1 1 45%", maxWidth: "600px" }}>
+    <p>Componentes:</p>
+    <ol style={{ paddingLeft: "20px" }}>
+      <li>1. ID de la fecha de inspección, se carga automáticamente.</li>
+      <li>2. Fecha de registro de la inspección, se coloca la fecha actual.</li>
+      <li>3.  Usuario que realiza el registro, toma del usuario logeado.</li>
+    </ol>
+  </div>
+
+{/* Columna de imagen */}
+
+  <div
+    style={{
+      flex: "1 1 45%", // Tamaño proporcional para mantener dos columnas iguales
+      maxWidth: "600px",
+      position: "relative",
+      height: "400px",
+    }}
+  >
+    <Image
+      src="/assets/images/formulario1.jpg"
+      alt="Pantalla de inicio de sesión"
+      fill
+      style={{ objectFit: "contain" }}
+      priority
+    />
+  </div>
+</div>

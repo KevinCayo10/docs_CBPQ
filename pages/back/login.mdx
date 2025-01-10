@@ -1,0 +1,69 @@
+import { Callout } from "nextra/components";
+import React from "react";
+import Image from "next/image";
+
+# **Inicio de sesión**
+
+### Ingreso de credenciales
+
+Para acceder al sistema, es necesario ingresar las credenciales de **usuario** y **contraseña** en los campos correspondientes. Esto garantizará que solo usuarios autorizados puedan visualizar los productos tecnológicos disponibles.
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/login.jpg"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+<Callout type="error">
+  Si las credenciales son incorrectas se visualizara un mensaje de error "No
+  autorizado"
+</Callout>
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/login_no_autorizado1.jpg"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+
+<Callout type="error">
+  Si las credenciales esta caducado se le muestra un mensaje de Error "Usuario
+  caducado"
+</Callout>
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/login_no_autorizado2.jpg"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
