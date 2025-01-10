@@ -36,8 +36,8 @@ Una vez ingresado al modulo Inspecciones, este tiene la funcionalidad de realiza
     display: "flex",
     flexWrap: "wrap", // Permite ajustar los elementos si no caben en una fila
     justifyContent: "center", // Centra las imágenes en el contenedor
-    gap: "16px", // Espaciado entre las imágenes
-    padding: "16px", // Espaciado interno para un diseño más limpio
+    gap: "5px", // Espaciado entre las imágenes
+    padding: "10px", // Espaciado interno para un diseño más limpio
   }}
 >
   {[
@@ -62,10 +62,9 @@ Una vez ingresado al modulo Inspecciones, este tiene la funcionalidad de realiza
       key={index}
       style={{
         position: "relative",
-        flex: "1 1 calc(25% - 16px)", // Toma el 25% del ancho con un espaciado
-        height: "500px", // Altura fija para todas las imágenes
-        minWidth: "300px", // Asegura un ancho mínimo para imágenes pequeñas
-        maxWidth: "400px", // Limita el ancho máximo para evitar tamaños exagerados
+        flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
+        height: "400px", // Altura fija para todas las imágenes
+        width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
       }}
     >
       <Image
@@ -115,13 +114,13 @@ Por consiguimiente se redireccionará al formulario de "Prevención", el cual se
     flexWrap: "wrap", // Permite que sea responsivo
     justifyContent: "space-between", // Espacia las columnas
     alignItems: "flex-start", // Alinea el contenido al inicio
-    gap: "16px", // Espaciado entre las columnas
+    gap: "5px", // Espaciado entre las columnas
   }}
 >
   {/* Columna de texto */}
   <div style={{ flex: "1 1 45%", maxWidth: "600px" }}>
-    <p>Componentes:</p>
-    <ol style={{ paddingLeft: "20px" }}>
+    <p>Componentes de DATOS INFORMATIVOS:</p>
+    <ol style={{ paddingLeft: "5px" }}>
       <li>1. ID de la fecha de inspección, se carga automáticamente.</li>
       <li>2. Fecha de registro de la inspección, se coloca la fecha actual.</li>
       <li>3.  Usuario que realiza el registro, toma del usuario logeado.</li>
@@ -147,3 +146,69 @@ Por consiguimiente se redireccionará al formulario de "Prevención", el cual se
     />
   </div>
 </div>
+
+Para seleccionar el ciudadano se da click sobre la icono "Lupa" en la sección de ciudadano. Por consiguiente se despliega un modal.
+
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap", // Permite ajustar los elementos si no caben en una fila
+    justifyContent: "center", // Centra las imágenes en el contenedor
+    gap: "16px", // Espaciado entre las imágenes
+    padding: "16px", // Espaciado interno para un diseño más limpio
+  }}
+>
+  {[
+    {
+      src: "/assets/images/formulario1_ciudadano.jpg",
+      alt: "Pantalla de búsqueda de inspecciones",
+    },
+    {
+      src: "/assets/images/seleccion_ciudadano1.jpg",
+      alt: "Pantalla de ingreso de código o cédula",
+    },
+    {
+      src: "/assets/images/seleccion_ciudadano2.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+    {
+      src: "/assets/images/seleccion_ciudadano3.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+    {
+      src: "/assets/images/seleccion_ciudadano4.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+    {
+      src: "/assets/images/seleccion_ciudadano5.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+  ].map((image, index) => (
+    <div
+      key={index}
+      style={{
+        position: "relative",
+        flex: "1 1 calc(25% - 16px)", // Toma el 25% del ancho con un espaciado
+        height: "300px", // Altura fija para todas las imágenes
+        minWidth: "300px", // Asegura un ancho mínimo para imágenes pequeñas
+        maxWidth: "400px", // Limita el ancho máximo para evitar tamaños exagerados
+      }}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        style={{ objectFit: "contain" }}
+        priority
+      />
+    </div>
+  ))}
+</div>
+
+Proceso:
+
+1. Dar click sobre la "Lupa"
+2. Por consiguiente se despliega el modal donde se puede seleccionar el tipo de consulta por ciudadano. Al dar click se muestra el tipo de consulta por "Cedula/RUC o Apellido".
+3. Se ingresa el valor de la consulta y se da click sobre el "Buscar" o "Lupa"
+4. Se muestra la información de la busqueda realizado en una lista.
+5. Se selecciona un ciudadano y se cargará la información en la seccion "Datos adicionales" correspondiente al Ciudadano.

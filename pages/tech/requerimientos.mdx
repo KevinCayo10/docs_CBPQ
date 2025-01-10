@@ -1,57 +1,45 @@
-# Requerimientos Técnicos
+# Manual Técnico del Sistema
 
-## Requerimientos del Sistema
+## Introducción
 
-### Aplicativo Web
+Este documento describe los aspectos técnicos de un aplicativo móvil, diseñado para proporcionar funcionalidades específicas como gestión de inspecciones. El sistema está compuesto por un backend desarrollado en Laravel 11 y un frontend móvil realizado con React Native.
 
-- **Compatibilidad de Navegadores**:
-  El aplicativo web es compatible con los siguientes navegadores:
+---
 
-  - Google Chrome (versión 90 o superior)
-  - Mozilla Firefox (versión 80 o superior)
-  - Microsoft Edge (versión 90 o superior)
-  - Safari (versión 14 o superior)
-  - Opera (versión 75 o superior)
-
-- **Requisitos del Sistema**:
-  - **Conexión a Internet**: Requerido para acceder a la plataforma en línea.
-  - **Resolución de Pantalla**: Recomendado 1024x768 píxeles o superior.
-  - **Navegadores recomendados**: Google Chrome, Mozilla Firefox o Microsoft Edge para mejor rendimiento.
+## Requerimientos Técnicos
 
 ### Aplicativo Móvil
 
-- **Sistema Operativo**:
-  El aplicativo móvil está diseñado para funcionar exclusivamente en el sistema operativo Android.
+- **Framework**: React Native.
+- **Compatibilidad**:
 
-  - **Requisitos de Android**:
+  - **Sistema Operativo**: Android.
+    - **Versión mínima**: Android 5.0 (Lollipop).
+    - **Impresión**: Compatible únicamente con Android 11 o superior.
+  - **Espacio de Almacenamiento**: Requiere al menos 100 MB libres.
+  - **Conexión a Internet**: Obligatoria para la mayoría de las funciones.
 
-    - **Versión mínima de Android**: Android 5.0 Lollipop o superior.
-    - **Espacio de almacenamiento**: Al menos 100 MB disponibles.
-    - **Conexión a Internet**: Requerida para el acceso a productos y recomendaciones.
-
-  - **Compatibilidad con Dispositivos**:
-    - Compatible con smartphones y tabletas Android.
-
-## Requerimientos de Software
+- **Dispositivos Compatibles**:
+  - Smartphones y tabletas Android.
 
 ### Backend
 
-- **Servidor**:
-  - **Lenguaje de programación**: Python(Flask, Scrapy y Selenium).
-  - **Base de Datos**: MongoDB.
-  - **Servicios adicionales**: API RESTful para interacción con el frontend y otros servicios.
+- **Framework**: Laravel 11.
+- **Lenguaje**: PHP 8.2.
+- **Servidor de despliegue**: Hosting compartido (cPanel).
+- **Base de Datos**: MySQL, gestionada en el hosting.
 
-### Frontend
+### Hosting
 
-- **Framework**:
-  - **Frontend Web**: React.js.
-  - **Frontend Móvil**: PWA
-
-### Otros
-
-- **Servicios en la Nube**:
-  - **Hosting**: Cloud Run de Google Cloud (Backend) y Vercel (Frontend).
+- **Panel de Control**: cPanel.
+- **Seguridad**: Certificados HTTPS instalados para garantizar conexiones seguras entre frontend y backend.
 
 ## Consideraciones Adicionales
 
-- **Seguridad**: El sistema implementa HTTPS para asegurar la comunicación entre el frontend y el backend.
+- **Seguridad**:
+
+  - **Protocolo HTTPS**: Todas las solicitudes al backend están aseguradas.
+  - **Autenticación**: Uso de tokens para la comunicación segura entre clientes y servidor.
+
+- **Compatibilidad**:
+  - Aunque el sistema de impresión está restringido a Android 11 o superior, otras funcionalidades (como la generación de reportes y la administración de usuarios) están habilitadas para todas las versiones de Android desde la 5.0.
