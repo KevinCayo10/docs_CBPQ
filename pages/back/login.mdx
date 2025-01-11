@@ -24,46 +24,60 @@ Para acceder al sistema, es necesario ingresar las credenciales de **usuario** y
     priority
   />
 </div>
-<Callout type="error">
-  Si las credenciales son incorrectas se visualizara un mensaje de error "No
-  autorizado"
-</Callout>
-
 <div
   style={{
-    position: "relative",
-    width: "100%",
-    maxWidth: "600px",
-    height: "400px",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    gap: "20px",
+    maxWidth: "1200px",
+    margin: "0 auto",
   }}
 >
-  <Image
-    src="/assets/images/login_no_autorizado1.jpg"
-    alt="Pantalla de inicio de sesión"
-    fill
-    style={{ objectFit: "contain" }}
-    priority
-  />
-</div>
+  {/* Columna 1 */}
+  <div style={{ flex: "1 1 45%" }}>
+    <h3 style={{ textAlign: "center" }}>Credenciales Incorrectas</h3>
+    <p style={{ textAlign: "center", marginBottom: "10px" }}>
+      Si las credenciales son incorrectas, se visualizará un mensaje de error: <strong>"No autorizado"</strong>
+    </p>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "400px",
+      }}
+    >
+      <Image
+        src="/assets/images/login_no_autorizado1.jpg"
+        alt="Pantalla de inicio de sesión"
+        fill
+        style={{ objectFit: "contain" }}
+        priority
+      />
+    </div>
+  </div>
 
-<Callout type="error">
-  Si las credenciales esta caducado se le muestra un mensaje de Error "Usuario
-  caducado"
-</Callout>
+{/* Columna 2 */}
 
-<div
-  style={{
-    position: "relative",
-    width: "100%",
-    maxWidth: "600px",
-    height: "400px",
-  }}
->
-  <Image
-    src="/assets/images/login_no_autorizado2.jpg"
-    alt="Pantalla de inicio de sesión"
-    fill
-    style={{ objectFit: "contain" }}
-    priority
-  />
+  <div style={{ flex: "1 1 45%" }}>
+    <h3 style={{ textAlign: "center" }}>Credenciales Caducadas</h3>
+    <p style={{ textAlign: "center", marginBottom: "10px" }}>
+      Si las credenciales están caducadas, se le mostrará un mensaje de error: <strong>"Usuario caducado"</strong>
+    </p>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "400px",
+      }}
+    >
+      <Image
+        src="/assets/images/login_no_autorizado2.jpg"
+        alt="Pantalla de inicio de sesión"
+        fill
+        style={{ objectFit: "contain" }}
+        priority
+      />
+    </div>
+  </div>
 </div>

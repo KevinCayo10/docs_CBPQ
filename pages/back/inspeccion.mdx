@@ -4,7 +4,7 @@ import Image from "next/image";
 
 # **Gestión de fichas de inspección**
 
-Este módulo le ofrece la posibilidad de visualizar los productos tecnológicos Portátiles extraidos de las tiendas en líneas. Además, el sistema permite realizar filtros y ordenamientos con el fín de disminuir la cantidad y variedad de opciones.
+Este módulo le ofrece las funcionalidades de un CRUD (Crear, Leer, Actualizar y Eliminar) de inspección. Además permite generar o imprimir una inspección y sucesivamente poder compartir al ciudadano.
 
 #### 1. Acceder al modulo inspección
 
@@ -31,57 +31,55 @@ Se selecciona la opción del menu (icono) y se despliega un menu lateral. Por co
 
 Una vez ingresado al modulo Inspecciones, este tiene la funcionalidad de realizar la busqueda de inspecciones. Por medio de Código de Inspección o Cedula/RUC registrado en la inspeccion.
 
-<div
-  style={{
-    display: "flex",
-    flexWrap: "wrap", // Permite ajustar los elementos si no caben en una fila
-    justifyContent: "center", // Centra las imágenes en el contenedor
-    gap: "5px", // Espaciado entre las imágenes
-    padding: "10px", // Espaciado interno para un diseño más limpio
-  }}
->
-  {[
-    {
-      src: "/assets/images/buscar_inspeccion_3.jpg",
-      alt: "Pantalla de búsqueda de inspecciones",
-    },
-    {
-      src: "/assets/images/codigo_cedula.jpg",
-      alt: "Pantalla de ingreso de código o cédula",
-    },
-    {
-      src: "/assets/images/buscar_inspeccion_1.jpg",
-      alt: "Pantalla de inicio de sesión",
-    },
-    {
-      src: "/assets/images/buscar_inspeccion_2.jpg",
-      alt: "Pantalla de inicio de sesión",
-    },
-  ].map((image, index) => (
-    <div
-      key={index}
-      style={{
-        position: "relative",
-        flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
-        height: "400px", // Altura fija para todas las imágenes
-        width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
-      }}
-    >
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        style={{ objectFit: "contain" }}
-        priority
-      />
-    </div>
-  ))}
-</div>
-
 1. Una vez seleccionado el tipo de busqueda
 2. Se ingresa el valor en el Campo.
 3. Por consiguiente se selecciona en el "Icono Lupa" o "Boton Buscar".
 4. Se visualizará la lista de inspecciones encontradas por ese campo.
+   <div
+     style={{
+       display: "flex",
+       justifyContent: "center", // Centra las imágenes en el contenedor
+       gap: "5px", // Espaciado entre las imágenes
+       padding: "10px", // Espaciado interno para un diseño más limpio
+     }}
+   >
+     {[
+       {
+         src: "/assets/images/buscar_inspeccion_3.jpg",
+         alt: "Pantalla de búsqueda de inspecciones",
+       },
+       {
+         src: "/assets/images/codigo_cedula.jpg",
+         alt: "Pantalla de ingreso de código o cédula",
+       },
+       {
+         src: "/assets/images/buscar_inspeccion_1.jpg",
+         alt: "Pantalla de inicio de sesión",
+       },
+       {
+         src: "/assets/images/buscar_inspeccion_2.jpg",
+         alt: "Pantalla de inicio de sesión",
+       },
+     ].map((image, index) => (
+       <div
+         key={index}
+         style={{
+           position: "relative",
+           flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
+           height: "400px", // Altura fija para todas las imágenes
+           width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
+         }}
+       >
+         <Image
+           src={image.src}
+           alt={image.alt}
+           fill
+           style={{ objectFit: "contain" }}
+           priority
+         />
+       </div>
+     ))}
+   </div>
 
 #### 3. Registro de inspecciones.
 
@@ -105,8 +103,6 @@ Dentro de la vista Inspecciones el sisema permite registrar nuevas inspecciones.
 </div>
 
 Por consiguimiente se redireccionará al formulario de "Prevención", el cual se visualizar los campos donde se tiene que llenar.
-
-##### A. Formulario Prevención
 
 <div
   style={{
@@ -147,22 +143,49 @@ Por consiguimiente se redireccionará al formulario de "Prevención", el cual se
   </div>
 </div>
 
+###### -Selección de ciudadano
+
 Para seleccionar el ciudadano se da click sobre la icono "Lupa" en la sección de ciudadano. Por consiguiente se despliega un modal.
 
 <div
   style={{
     display: "flex",
-    flexWrap: "wrap", // Permite ajustar los elementos si no caben en una fila
-    justifyContent: "center", // Centra las imágenes en el contenedor
-    gap: "16px", // Espaciado entre las imágenes
-    padding: "16px", // Espaciado interno para un diseño más limpio
+    flexWrap: "wrap", // Permite que sea responsivo
+    justifyContent: "space-between", // Espacia las columnas
+    alignItems: "flex-start", // Alinea el contenido al inicio
+    gap: "5px", // Espaciado entre las columnas
+  }}
+>
+
+{/* Columna de imagen */}
+
+  <div
+    style={{
+      flex: "1 1 45%", // Tamaño proporcional para mantener dos columnas iguales
+      maxWidth: "600px",
+      position: "relative",
+      height: "400px",
+    }}
+  >
+    <Image
+      src="/assets/images/formulario1_ciudadano.jpg"
+      alt="Pantalla de inicio de sesión"
+      fill
+      style={{ objectFit: "contain" }}
+      priority
+    />
+  </div>
+</div>
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center", // Centra las imágenes horizontalmente en el contenedor
+    gap: "10px", // Espaciado entre las imágenes
+    overflowX: "auto",
   }}
 >
   {[
-    {
-      src: "/assets/images/formulario1_ciudadano.jpg",
-      alt: "Pantalla de búsqueda de inspecciones",
-    },
     {
       src: "/assets/images/seleccion_ciudadano1.jpg",
       alt: "Pantalla de ingreso de código o cédula",
@@ -188,10 +211,8 @@ Para seleccionar el ciudadano se da click sobre la icono "Lupa" en la sección d
       key={index}
       style={{
         position: "relative",
-        flex: "1 1 calc(25% - 16px)", // Toma el 25% del ancho con un espaciado
-        height: "300px", // Altura fija para todas las imágenes
-        minWidth: "300px", // Asegura un ancho mínimo para imágenes pequeñas
-        maxWidth: "400px", // Limita el ancho máximo para evitar tamaños exagerados
+        width: "400px", // Ancho fijo para las imágenes
+        height: "400px", // Altura fija para todas las imágenes
       }}
     >
       <Image
@@ -205,10 +226,193 @@ Para seleccionar el ciudadano se da click sobre la icono "Lupa" en la sección d
   ))}
 </div>
 
-Proceso:
+{/* Columna de texto */}
 
-1. Dar click sobre la "Lupa"
-2. Por consiguiente se despliega el modal donde se puede seleccionar el tipo de consulta por ciudadano. Al dar click se muestra el tipo de consulta por "Cedula/RUC o Apellido".
-3. Se ingresa el valor de la consulta y se da click sobre el "Buscar" o "Lupa"
-4. Se muestra la información de la busqueda realizado en una lista.
-5. Se selecciona un ciudadano y se cargará la información en la seccion "Datos adicionales" correspondiente al Ciudadano.
+  <div style={{ flex: "1 1 45%", maxWidth: "600px" }}>
+    <ol style={{ paddingLeft: "5px" }}>
+    Proceso:
+
+      <li>1. Dar click sobre la "Lupa".</li>
+      <li>2. Por consiguiente se despliega el modal donde se puede seleccionar el tipo de consulta por ciudadano. Al dar click se muestra el tipo de consulta por "Cedula/RUC o Apellido".</li>
+      <li>3. Se ingresa el valor de la consulta y se da click sobre el "Buscar" o "Lupa"</li>
+      <li>4. Se muestra la información de la busqueda realizado en una lista.</li>
+      <li>5. Se selecciona un ciudadano y se cargará la información en la seccion "Datos adicionales" correspondiente al Ciudadano.</li>
+
+    </ol>
+
+  </div>
+
+Una vez registrado los datos correspondientes, en el ultimo Formulario al final se muestra el boton de "Registrar inspección"
+
+<div
+  style={{
+    flex: "1 1 45%", // Tamaño proporcional para mantener dos columnas iguales
+    maxWidth: "600px",
+    position: "relative",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/registrar_inspeccion2.jpg"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+
+#### 4. Editar inspección
+
+El sistema contiene la funcionalidad de editar, en este caso para realizar la edición primero se debe buscar la inspección para editarla (Punto 3.). Una vez obtenida entonces se selecciona el icono "Lapiz". Por consiguiente se cargará los valores en los campos. Para actualizar se ubica en el Formulario B y se da click sobre el boton "Actualizar inspección"
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center", // Centra las imágenes en el contenedor
+    gap: "5px", // Espaciado entre las imágenes
+    padding: "10px", // Espaciado interno para un diseño más limpio
+  }}
+>
+  {[
+    {
+      src: "/assets/images/buscar_inspeccion1_edit.jpg",
+      alt: "Pantalla de búsqueda de inspecciones",
+    },
+    {
+      src: "/assets/images/edit1.jpg",
+      alt: "Pantalla de ingreso de código o cédula",
+    },
+    {
+      src: "/assets/images/edit2.jpg",
+      alt: "Pantalla de inicio de sesión",
+    },
+  ].map((image, index) => (
+    <div
+      key={index}
+      style={{
+        position: "relative",
+        flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
+        height: "400px", // Altura fija para todas las imágenes
+        width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
+      }}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        style={{ objectFit: "contain" }}
+        priority
+      />
+    </div>
+  ))}
+</div>
+
+#### 5. Eliminar inspección
+
+El sistema contiene la funcionalidad de editar, en este caso para realizar la eliminación de la inspección:
+
+1.  primero se debe buscar la inspección para eliminarla (Punto 3.). Una vez obtenida entonces se selecciona el icono "Basurero".
+2.  Por consiguiente se muestra un modal de confirmación. Se confirma la eliminación.
+3.  Se muestra el aviso de que se ha eliminado correctamente.
+    <Callout type="info">
+      Saldra un aviso de error que no se puede eliminar, si la inspección esta
+      relacionada con otros registros
+    </Callout>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center", // Centra las imágenes en el contenedor
+        gap: "5px", // Espaciado entre las imágenes
+        padding: "10px", // Espaciado interno para un diseño más limpio
+      }}
+    >
+      {[
+        {
+          src: "/assets/images/delete1.jpg",
+          alt: "Pantalla de búsqueda de inspecciones",
+        },
+        {
+          src: "/assets/images/delete2.jpg",
+          alt: "Pantalla de ingreso de código o cédula",
+        },
+        {
+          src: "/assets/images/delete3.jpg",
+          alt: "Pantalla de inicio de sesión",
+        },
+      ].map((image, index) => (
+        <div
+          key={index}
+          style={{
+            position: "relative",
+            flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
+            height: "400px", // Altura fija para todas las imágenes
+            width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
+          }}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            style={{ objectFit: "contain" }}
+            priority
+          />
+        </div>
+      ))}
+    </div>
+
+#### 6. Imprimir inspección
+
+El sistema contiene la funcionalidad de imprimir la inspección, en este caso descargar y compartir al Whatsapp, en este caso para realizar la impresión de la inspección:
+
+1.  Primero se debe buscar la inspección para eliminarla (Punto 3.). Una vez obtenida entonces se selecciona el icono "Impresora".
+2.  Por consiguiente se muestra un modal de Éxito. Se confirma para continuar con el proceso.
+3.  Por consiguiente se muestra un modal de confirmación para compartir al Whatsapp. La opción Si redirecciona al Whatsapp. La opción No cierra el modal
+    <Callout type="info">
+      Si el ciudadano no tiene un numero registrado solo redireccionara al
+      Whastapp en compartir.
+    </Callout>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center", // Centra las imágenes en el contenedor
+        gap: "5px", // Espaciado entre las imágenes
+        padding: "10px", // Espaciado interno para un diseño más limpio
+      }}
+    >
+      {[
+        {
+          src: "/assets/images/print1.jpg",
+          alt: "Pantalla de búsqueda de inspecciones",
+        },
+        {
+          src: "/assets/images/print2.jpg",
+          alt: "Pantalla de ingreso de código o cédula",
+        },
+        {
+          src: "/assets/images/print3.jpg",
+          alt: "Pantalla de inicio de sesión",
+        },
+        {
+          src: "/assets/images/print4.jpg",
+          alt: "Pantalla de inicio de sesión",
+        },
+      ].map((image, index) => (
+        <div
+          key={index}
+          style={{
+            position: "relative",
+            flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
+            height: "400px", // Altura fija para todas las imágenes
+            width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
+          }}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            style={{ objectFit: "contain" }}
+            priority
+          />
+        </div>
+      ))}
+    </div>

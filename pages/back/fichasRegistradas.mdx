@@ -1,0 +1,77 @@
+import { Callout } from "nextra/components";
+import React from "react";
+import Image from "next/image";
+
+# **Fichas registradas**
+
+Este módulo le ofrece la posibilidad de visualizar las fichas registradas por el usuario logeado y en rango de fechas correspondientes.
+
+#### 1. Acceder al modulo fichas registradas
+
+Se selecciona la opción del menu (icono) y se despliega un menu lateral. Por consiguiente se selecciona "Fichas"
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+  }}
+>
+  <Image
+    src="/assets/images/menu_drawer_ficha.png"
+    alt="Pantalla de inicio de sesión"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+
+#### 2. Busquedad de fichas registradas.
+
+Una vez ingresado al modulo Fichas, este tiene la funcionalidad de realizar la busqueda de las fichas. Por medio de un rango de fechas
+
+1. Selección de los rangos de fechas
+2. Selección del boton "Buscar"
+3. Se visualizará la lista de fichas de inspecciones encontradas por ese campo.
+   <div
+     style={{
+       display: "flex",
+       justifyContent: "center", // Centra las imágenes en el contenedor
+       gap: "5px", // Espaciado entre las imágenes
+       padding: "10px", // Espaciado interno para un diseño más limpio
+     }}
+   >
+     {[
+       {
+         src: "/assets/images/fichas_registradas1.jpg",
+         alt: "Pantalla de búsqueda de inspecciones",
+       },
+       {
+         src: "/assets/images/fichas_registradas3.jpg",
+         alt: "Pantalla de ingreso de código o cédula",
+       },
+       {
+         src: "/assets/images/fichas_registradas2.jpg",
+         alt: "Pantalla de inicio de sesión",
+       },
+     ].map((image, index) => (
+       <div
+         key={index}
+         style={{
+           position: "relative",
+           flex: "1 1 calc(50% - 16px)", // Toma el 25% del ancho con un espaciado
+           height: "400px", // Altura fija para todas las imágenes
+           width: "auto", // Limita el ancho máximo para evitar tamaños exagerados
+         }}
+       >
+         <Image
+           src={image.src}
+           alt={image.alt}
+           fill
+           style={{ objectFit: "contain" }}
+           priority
+         />
+       </div>
+     ))}
+   </div>
