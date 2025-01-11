@@ -76,8 +76,8 @@ export default {
     text: (
       <span>
         Derechos reservados {new Date().getFullYear()} ©{" "}
-        <a href="https://portfolio-kevdev.vercel.app/" target="_blank">
-          Kevin Cayo
+        <a href="https://bomberospuertoquito.gob.ec/" target="_blank">
+          Cuerpo de Bomberos Puerto Quito
         </a>
         .
       </span>
