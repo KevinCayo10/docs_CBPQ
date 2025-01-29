@@ -75,7 +75,7 @@ export default {
   footer: {
     text: (
       <span>
-        Derechos reservados {new Date().getFullYear()} ©{" "}
+        Derechos reservados - {new Date().getFullYear()} ©{" "}
         <a href="https://bomberospuertoquito.gob.ec/" target="_blank">
           Cuerpo de Bomberos Puerto Quito
         </a>
